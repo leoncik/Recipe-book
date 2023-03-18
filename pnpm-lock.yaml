@@ -19,6 +19,7 @@ specifiers:
   karma-coverage: ~2.2.0
   karma-jasmine: ~5.1.0
   karma-jasmine-html-reporter: ~2.0.0
+  prettier: ^2.8.4
   rxjs: ~7.5.0
   tslib: ^2.3.0
   typescript: ~4.8.2
@@ -48,6 +49,7 @@ devDependencies:
   karma-coverage: 2.2.0
   karma-jasmine: 5.1.0_karma@6.4.1
   karma-jasmine-html-reporter: 2.0.0_uk6l45dlsjldsnfgnal4othgyq
+  prettier: 2.8.4
   typescript: 4.8.4
 
 packages:
@@ -5413,6 +5415,12 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+    dev: true
+
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /pretty-bytes/5.6.0:
