@@ -13,6 +13,17 @@ ul {
     list-style: none;
     padding-left: 0;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
+
+/* Color palette */
+:root {
+    --primary-color: #136F63;
+    --background-color: #032B43;
+    --text-color: white;
+    --other1: #3F88C5;
+    --other2: #FFBA08;
+    --other3: #D00000;
+}
 
