@@ -16,14 +16,17 @@ ul {
     margin-bottom: 0;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
 
 /* Color palette */
 :root {
-    --primary-color: #136F63;
-    --background-color: #032B43;
+    --primary-color: #136f63;
+    --background-color: #032b43;
     --text-color: white;
-    --other1: #3F88C5;
-    --other2: #FFBA08;
-    --other3: #D00000;
+    --other1: #3f88c5;
+    --other2: #ffba08;
+    --other3: #d00000;
 }
-
