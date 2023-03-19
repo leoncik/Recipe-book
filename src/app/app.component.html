@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header (pageSelected)="onNavigate($event)"></app-header>
 
-<app-recipes></app-recipes>
-<app-shopping-list></app-shopping-list>
+<app-recipes *ngIf="loadedPage === 'recipes'"></app-recipes>
+<app-shopping-list *ngIf="loadedPage !== 'recipes'"></app-shopping-list>
