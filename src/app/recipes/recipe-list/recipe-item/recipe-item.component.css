@@ -1,0 +1,15 @@
+a {
+    display: block;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px 16px;
+}
+
+a:hover {
+    opacity: 0.85;
+}
+
+img {
+    width: 100%;
+    max-height: 250px;
+}
