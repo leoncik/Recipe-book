@@ -1,0 +1,10 @@
+.form-fields {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 16px;
+}
