@@ -1,8 +1,16 @@
 <div class="wrapper">
     <div>
-        <app-recipe-list></app-recipe-list>
+        <app-recipe-list
+            (selectedRecipeAgain)="selectedRecipe = $event"
+        ></app-recipe-list>
     </div>
     <div>
-        <app-recipe-detail></app-recipe-detail>
+        <app-recipe-detail
+            [recipe]="selectedRecipe"
+            *ngIf="selectedRecipe; else infoText"
+        ></app-recipe-detail>
+        <ng-template #infoText>
+            <p>Please select a recipe.</p>
+        </ng-template>
     </div>
 </div>

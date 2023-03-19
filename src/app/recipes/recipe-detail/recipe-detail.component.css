@@ -1,3 +1,7 @@
 .recipe-options {
     display: none;
 }
+
+img {
+    max-height: 250px;
+}

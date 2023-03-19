@@ -1,8 +1,8 @@
 <div class="recipe-picture">
-    <img src="" alt="" />
+    <img [src]="recipe.imagePath" alt="" />
 </div>
 <div class="recipe-title">
-    <h1>Recipe name</h1>
+    <h1>{{ recipe.name }}</h1>
 </div>
 <div class="recipe-manager">
     <button>Manage recipe</button>
@@ -19,7 +19,7 @@
     </ul>
 </div>
 <div>
-    <p>Recipe description</p>
+    <p>{{ recipe.description }}</p>
 </div>
 <div>
     <p>Ingredients</p>
