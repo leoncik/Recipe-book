@@ -1,7 +1,26 @@
-.recipe-options {
-    display: none;
-}
-
 img {
     max-height: 250px;
+}
+
+.recipe-manager {
+    position: relative;
+}
+
+.recipe-options {
+    display: none;
+    padding: 4px 8px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    white-space: nowrap;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.recipe-options a:hover {
+    text-decoration: underline;
+}
+
+.dropdown-open ~ .recipe-options {
+    display: block;
 }

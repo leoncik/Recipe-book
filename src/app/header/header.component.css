@@ -17,6 +17,24 @@ a {
     gap: 16px;
 }
 
+.actions {
+    position: relative;
+}
+
 .actions-menu {
     display: none;
+    padding: 4px 8px;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    white-space: nowrap;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.actions-menu a:hover {
+    text-decoration: underline;
+}
+
+.dropdown-open ~ .actions-menu {
+    display: block;
 }
