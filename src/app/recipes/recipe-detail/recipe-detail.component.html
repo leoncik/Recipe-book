@@ -8,7 +8,9 @@
     <button appDropdown>Manage recipe</button>
     <ul class="recipe-options">
         <li>
-            <a href="#">Add ingredients to the Shopping list</a>
+            <a style="cursor: pointer" (click)="onAddToShoppingList()"
+                >Add ingredients to the Shopping list</a
+            >
         </li>
         <li>
             <a href="#">Edit recipe</a>
