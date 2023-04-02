@@ -1,4 +1,3 @@
-<app-header (pageSelected)="onNavigate($event)"></app-header>
+<app-header></app-header>
 
-<app-recipes *ngIf="loadedPage === 'recipes'"></app-recipes>
-<app-shopping-list *ngIf="loadedPage !== 'recipes'"></app-shopping-list>
+<router-outlet></router-outlet>
