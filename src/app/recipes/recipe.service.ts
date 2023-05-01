@@ -35,6 +35,11 @@ export class RecipeService {
         return this.recipes.slice();
     }
 
+    // The id retrieved as params acts as index
+    getRecipe(id: number) {
+        return this.recipes[id];
+    }
+
     constructor(private shoppingListService: ShoppingListService) {}
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
