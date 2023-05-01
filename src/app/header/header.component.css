@@ -8,6 +8,7 @@ nav {
 
 a {
     color: var(--primary-color);
+    cursor: pointer;
 }
 .active {
     text-decoration: underline;

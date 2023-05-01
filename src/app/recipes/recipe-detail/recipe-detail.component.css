@@ -2,6 +2,10 @@ img {
     max-height: 250px;
 }
 
+a {
+    cursor: pointer;
+}
+
 .recipe-manager {
     position: relative;
 }
