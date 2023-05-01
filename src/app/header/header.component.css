@@ -9,6 +9,9 @@ nav {
 a {
     color: var(--primary-color);
 }
+.active {
+    text-decoration: underline;
+}
 
 .navigation,
 .nav-links {
