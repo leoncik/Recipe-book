@@ -9,6 +9,11 @@ a:hover {
     opacity: 0.85;
 }
 
+.active {
+    background-color: rgb(83, 109, 204);
+    color: white;
+}
+
 img {
     width: 100%;
     max-height: 250px;
