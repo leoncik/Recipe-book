@@ -5,10 +5,4 @@ import { Component } from '@angular/core';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-    loadedPage = 'recipes';
-
-    onNavigate(page: string) {
-        this.loadedPage = page;
-    }
-}
+export class AppComponent {}
