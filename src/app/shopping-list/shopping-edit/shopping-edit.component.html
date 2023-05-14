@@ -2,15 +2,25 @@
     <div class="form-fields">
         <div class="form-item">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" ngModel />
+            <input type="text" name="name" id="name" required ngModel />
         </div>
         <div class="form-item">
             <label for="amount">Amount</label>
-            <input type="number" name="amount" id="amount" ngModel />
+            <input
+                type="number"
+                pattern="^[1-9]+[0_9]*$"
+                min="1"
+                name="amount"
+                id="amount"
+                required
+                ngModel
+            />
         </div>
     </div>
     <div class="form-buttons">
-        <button type="submit">Add ingredient</button>
+        <button type="submit" [disabled]="!formRef.valid">
+            Add ingredient
+        </button>
         <button type="button">Delete ingredient</button>
         <button type="button">Clear form</button>
     </div>
