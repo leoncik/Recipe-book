@@ -1,4 +1,4 @@
-<form (ngSubmit)="onAddIngredient(formRef)" #formRef="ngForm">
+<form (ngSubmit)="onSubmit(formRef)" #formRef="ngForm">
     <div class="form-fields">
         <div class="form-item">
             <label for="name">Name</label>
@@ -19,7 +19,7 @@
     </div>
     <div class="form-buttons">
         <button type="submit" [disabled]="!formRef.valid">
-            Add ingredient
+            {{ editMode ? 'Edit ingredient' : 'Add ingredient' }}
         </button>
         <button type="button">Delete ingredient</button>
         <button type="button">Clear form</button>
