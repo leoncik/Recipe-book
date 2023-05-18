@@ -22,6 +22,6 @@
             {{ editMode ? 'Edit ingredient' : 'Add ingredient' }}
         </button>
         <button type="button">Delete ingredient</button>
-        <button type="button">Clear form</button>
+        <button (click)="onClear()" type="button">Clear form</button>
     </div>
 </form>
