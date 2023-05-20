@@ -83,6 +83,13 @@ export class RecipeEditComponent implements OnInit {
             })
         );
     }
+    onDeleteIngredient(ingredientIndex: number) {
+        // * Note: removeAt is a method provided by FormArray which is an
+        // * object provided by Angular, so It's not a JavaScript method.
+        (<FormArray>this.recipeForm.get('ingredients')).removeAt(
+            ingredientIndex
+        );
+    }
 
     onCancel() {
         this.router.navigate(['../'], { relativeTo: this.route });
