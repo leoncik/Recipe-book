@@ -16,3 +16,8 @@
     justify-content: flex-end;
     gap: 16px;
 }
+
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+    border: 1px solid crimson;
+}
