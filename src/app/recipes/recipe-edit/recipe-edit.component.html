@@ -47,6 +47,6 @@
 
     <div class="form-buttons">
         <button [disabled]="!recipeForm.valid" type="submit">Save</button>
-        <button type="button">Cancel</button>
+        <button (click)="onCancel()" type="button">Cancel</button>
     </div>
 </form>
