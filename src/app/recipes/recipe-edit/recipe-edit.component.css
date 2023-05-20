@@ -21,3 +21,11 @@ input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
     border: 1px solid crimson;
 }
+
+.image-preview {
+    width: 350px;
+}
+.image-preview img {
+    width: 100%;
+    object-fit: cover;
+}

@@ -5,11 +5,16 @@
     </div>
     <div class="form-group">
         <label for="imagePath">Image URL</label>
-        <input formControlName="imagePath" type="text" id="imagePath" />
+        <input
+            formControlName="imagePath"
+            #imagePathRef
+            type="text"
+            id="imagePath"
+        />
     </div>
 
     <div class="image-preview">
-        <img src="" alt="" />
+        <img [src]="imagePathRef.value" alt="" />
     </div>
 
     <div class="form-group">
