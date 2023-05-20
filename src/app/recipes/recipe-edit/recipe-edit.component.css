@@ -3,3 +3,16 @@
     flex-direction: column;
     gap: 4px;
 }
+
+.ingredients {
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+}
+
+.form-buttons {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}

@@ -21,19 +21,26 @@
         ></textarea>
     </div>
 
-    <div class="ingredients">
-        <div class="ingredient-name">
-            <input type="text" name="" id="" />
+    <div class="ingredients-wrapper" formArrayName="ingredients">
+        <div
+            *ngFor="let ingredientCtrl of controls; let i = index"
+            [formGroupName]="i"
+            class="ingredients"
+        >
+            <div class="ingredient-name">
+                <input type="text" formControlName="name" id="" />
+            </div>
+            <div class="ingredient-amount">
+                <input type="number" formControlName="amount" id="" />
+            </div>
+            <div class="delete-button">
+                <button type="button">X</button>
+            </div>
         </div>
-        <div class="ingredient-amount">
-            <input type="number" name="" id="" />
-        </div>
-        <div class="delete-button">
-            <button type="button">X</button>
-        </div>
-        <!-- Ingredients -->
     </div>
 
-    <button type="submit">Save</button>
-    <button type="button">Cancel</button>
+    <div class="form-buttons">
+        <button type="submit">Save</button>
+        <button type="button">Cancel</button>
+    </div>
 </form>
