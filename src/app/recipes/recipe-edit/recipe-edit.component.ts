@@ -50,7 +50,6 @@ export class RecipeEditComponent implements OnInit {
                 }
             }
         }
-        console.log('voyons', recipeName);
         this.recipeForm = new FormGroup({
             name: new FormControl(recipeName),
             imagePath: new FormControl(recipeImagePath),
@@ -61,6 +60,15 @@ export class RecipeEditComponent implements OnInit {
 
     get controls() {
         return (<FormArray>this.recipeForm.get('ingredients')).controls;
+    }
+
+    onAddIngredient() {
+        (<FormArray>this.recipeForm.get('ingredients')).push(
+            new FormGroup({
+                name: new FormControl(),
+                amount: new FormControl(),
+            })
+        );
     }
 
     onSubmit() {
