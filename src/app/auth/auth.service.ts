@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
 
@@ -27,33 +27,47 @@ export class AuthService {
                     returnSecureToken: true,
                 }
             )
-            .pipe(
-                catchError((errorResponse) => {
-                    let errorMessage = 'An unknown error occurred!';
-                    if (!errorResponse.error || !errorResponse.error.error) {
-                        return throwError(errorMessage);
-                    }
-                    switch (errorResponse.error.error.message) {
-                        case 'EMAIL_EXISTS':
-                            errorMessage = 'This email already exists.';
-                            break;
-
-                        default:
-                            break;
-                    }
-                    return throwError(errorMessage);
-                })
-            );
+            .pipe(catchError(this.handleError));
     }
 
     login(email: string, password: string) {
-        return this.http.post<AuthResponseData>(
-            'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBDT0jYJtP7RGjAUTEwjQyTlHpw4AnqQZc',
-            {
-                email: email,
-                password: password,
-                returnSecureToken: true,
-            }
-        );
+        return this.http
+            .post<AuthResponseData>(
+                'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBDT0jYJtP7RGjAUTEwjQyTlHpw4AnqQZc',
+                {
+                    email: email,
+                    password: password,
+                    returnSecureToken: true,
+                }
+            )
+            .pipe(catchError(this.handleError));
+    }
+
+    private handleError(errorResponse: HttpErrorResponse) {
+        let errorMessage = 'An unknown error occurred!';
+        if (!errorResponse.error || !errorResponse.error.error) {
+            return throwError(errorMessage);
+        }
+        switch (errorResponse.error.error.message) {
+            // ! Note: for security reason, displaying less precise error
+            // ! messages is more secure. Here we handle different messages
+            // ! to practice error handling.
+
+            case 'EMAIL_EXISTS':
+                errorMessage = 'This email already exists.';
+                break;
+
+            case 'EMAIL_NOT_FOUND':
+                errorMessage = 'This email does not exists.';
+                break;
+
+            case 'INVALID_PASSWORD':
+                errorMessage = 'Your password is invalid.';
+                break;
+
+            default:
+                break;
+        }
+        return throwError(errorMessage);
     }
 }
