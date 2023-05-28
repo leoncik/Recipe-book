@@ -1,15 +1,24 @@
 <h1>{{ isLoginMode ? 'Login' : 'Register' }}</h1>
-<form>
+<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <input type="email" name="email" id="email" required email ngModel />
     </div>
     <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
+        <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            minlength="6"
+            ngModel
+        />
     </div>
     <div class="buttons">
-        <button type="submit">{{ isLoginMode ? 'Login' : 'Register' }}</button>
+        <button [disabled]="!authForm.valid" type="submit">
+            {{ isLoginMode ? 'Login' : 'Register' }}
+        </button>
         <span
             >{{
                 isLoginMode
