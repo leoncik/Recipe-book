@@ -1,3 +1,4 @@
+<h1>{{ isLoginMode ? 'Login' : 'Register' }}</h1>
 <form>
     <div class="form-group">
         <label for="email">Email</label>
@@ -8,7 +9,16 @@
         <input type="password" name="password" id="password" />
     </div>
     <div class="buttons">
-        <button>Sign up</button>
-        <span>Already have an account? <a href="#">Login</a> </span>
+        <button type="submit">{{ isLoginMode ? 'Login' : 'Register' }}</button>
+        <span
+            >{{
+                isLoginMode
+                    ? "You don't have an account?"
+                    : 'Already have an account?'
+            }}
+            <a (click)="onSwitchMode()"
+                >{{ isLoginMode ? 'create one!' : 'login' }}
+            </a></span
+        >
     </div>
 </form>
