@@ -1,5 +1,8 @@
 <h1>{{ isLoginMode ? 'Login' : 'Register' }}</h1>
-<form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+<div *ngIf="isLoading">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+<form *ngIf="!isLoading" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
     <div class="form-group">
         <label for="email">Email</label>
         <input type="email" name="email" id="email" required email ngModel />
