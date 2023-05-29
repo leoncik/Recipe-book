@@ -79,6 +79,7 @@ export class AuthService {
         );
         const user = new User(email, userId, token, expirationDate);
         this.user.next(user);
+        localStorage.setItem('userData', JSON.stringify(user));
     }
 
     private handleError(errorResponse: HttpErrorResponse) {
@@ -109,8 +110,33 @@ export class AuthService {
         return throwError(errorMessage);
     }
 
+    autoLogin() {
+        const userDataString = localStorage.getItem('userData');
+        const userData: {
+            email: string;
+            id: string;
+            _token: string;
+            _tokenExpirationDate: Date;
+        } = userDataString ? JSON.parse(userDataString) : null;
+        if (!userData) {
+            return;
+        }
+
+        const loadedUser = new User(
+            userData.email,
+            userData.id,
+            userData._token,
+            new Date(userData._tokenExpirationDate)
+        );
+
+        if (loadedUser.token) {
+            this.user.next(loadedUser);
+        }
+    }
+
     logout() {
         this.user.next(null);
         this.router.navigate(['/auth']);
+        localStorage.removeItem('userData');
     }
 }
