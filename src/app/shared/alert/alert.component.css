@@ -1,0 +1,21 @@
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.341);
+    z-index: 1;
+}
+
+.alert-box {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 15px;
+    padding: 32px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.341);
+}
