@@ -51,4 +51,8 @@ export class AuthComponent {
 
         form.reset();
     }
+
+    handleCloseAlert() {
+        this.error = null;
+    }
 }
