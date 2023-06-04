@@ -11,7 +11,6 @@ import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { AlertComponent } from './shared/alert/alert.component';
-import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @NgModule({
     declarations: [
@@ -28,7 +27,6 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        ShoppingListModule,
     ],
     providers: [
         {
