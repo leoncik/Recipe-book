@@ -8,6 +8,11 @@ const routes: Routes = [
         path: 'auth',
         component: AuthComponent,
     },
+    {
+        path: 'recipes',
+        loadChildren: () =>
+            import('./recipes/recipes.module').then((m) => m.RecipesModule),
+    },
 ];
 
 @NgModule({
