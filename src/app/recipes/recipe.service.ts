@@ -12,26 +12,29 @@ export class RecipeService {
     // to reflect changes on page
     recipesChanged = new Subject<Recipe[]>();
 
-    // private recipes: Recipe[] = [
-    //     new Recipe(
-    //         'Pierogi',
-    //         'Delicious Polish dumplings.',
-    //         'https://upload.wikimedia.org/wikipedia/commons/b/ba/04565_Christmas_dumplings_with_dried_plums.JPG',
-    //         [
-    //             new Ingredient('Eggs', 2),
-    //             new Ingredient('Water', 150),
-    //             new Ingredient('Flour', 500),
-    //             new Ingredient('Potatoes', 8),
-    //         ]
-    //     ),
-    //     new Recipe(
-    //         'Tomato soup',
-    //         'Tomato soup is a soup with tomatoes. What a suprise.',
-    //         'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Tomato_soup.jpg/800px-Tomato_soup.jpg',
-    //         [new Ingredient('Tomatoes', 4), new Ingredient('Oil', 1)]
-    //     ),
-    // ];
-    private recipes: Recipe[] = [];
+    private recipes: Recipe[] = [
+        new Recipe(
+            'Pierogi',
+            'Delicious Polish dumplings.',
+            'https://upload.wikimedia.org/wikipedia/commons/b/ba/04565_Christmas_dumplings_with_dried_plums.JPG',
+            [
+                new Ingredient('Eggs', 2, 'pcs'),
+                new Ingredient('Water', 150, 'mL'),
+                new Ingredient('Flour', 500, 'g'),
+                new Ingredient('Potatoes', 8, 'pcs'),
+            ]
+        ),
+        new Recipe(
+            'Tomato soup',
+            'Tomato soup is a soup with tomatoes. What a suprise.',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Tomato_soup.jpg/800px-Tomato_soup.jpg',
+            [
+                new Ingredient('Tomatoes', 4, 'pcs'),
+                new Ingredient('Oil', 1, 'tsp'),
+            ]
+        ),
+    ];
+    // private recipes: Recipe[] = [];
 
     setRecipes(recipes: Recipe[]) {
         this.recipes = recipes;

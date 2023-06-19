@@ -4,7 +4,7 @@
     </div>
     <div class="nav-links">
         <ul class="navigation">
-            <li *ngIf="isAuthenticated">
+            <li>
                 <a routerLinkActive="active" routerLink="/recipes">Recipes</a>
             </li>
             <li>
@@ -12,25 +12,6 @@
                     >Shopping list</a
                 >
             </li>
-            <li *ngIf="!isAuthenticated">
-                <a routerLinkActive="active" routerLink="/auth">Authenticate</a>
-            </li>
         </ul>
-        <div class="actions">
-            <button (click)="onLogout()" *ngIf="isAuthenticated" type="button">
-                Logout
-            </button>
-            <button *ngIf="isAuthenticated" appDropdown type="button">
-                Manage
-            </button>
-            <ul class="actions-menu">
-                <li>
-                    <a (click)="onSaveData()">Save data</a>
-                </li>
-                <li>
-                    <a (click)="onFetchData()">Fetch data</a>
-                </li>
-            </ul>
-        </div>
     </div>
 </nav>
