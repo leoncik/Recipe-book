@@ -6,6 +6,6 @@
         *ngFor="let ingredient of ingredients; let i = index"
         (click)="onEditIngredient(i)"
     >
-        {{ ingredient.name }} ({{ ingredient.amount }})
+        {{ ingredient.name }} ({{ ingredient.amount }} {{ ingredient.unit }})
     </li>
 </ul>
