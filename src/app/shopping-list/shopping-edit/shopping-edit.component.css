@@ -1,5 +1,10 @@
+form {
+    margin-top: 32px;
+}
+
 .form-fields {
     display: flex;
+    justify-content: center;
     gap: 24px;
     margin-bottom: 16px;
 }

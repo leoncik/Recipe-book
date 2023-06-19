@@ -4,6 +4,9 @@ import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping-list.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     declarations: [ShoppingListComponent, ShoppingEditComponent],
@@ -11,6 +14,9 @@ import { FormsModule } from '@angular/forms';
         CommonModule,
         FormsModule,
         RouterModule.forChild([{ path: '', component: ShoppingListComponent }]),
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
     ],
 })
 export class ShoppingListModule {}
