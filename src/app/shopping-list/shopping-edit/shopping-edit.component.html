@@ -16,6 +16,22 @@
                 ngModel
             />
         </div>
+        <div class="form-item">
+            <label for="unit">Unit</label>
+            <select name="unit" id="unit" required ngModel>
+                <optgroup
+                    *ngFor="let optionType of unitOptions"
+                    [label]="optionType.label"
+                >
+                    <option
+                        *ngFor="let option of optionType.options"
+                        [value]="option"
+                    >
+                        {{ option }}
+                    </option>
+                </optgroup>
+            </select>
+        </div>
     </div>
     <div class="form-buttons">
         <button type="submit" [disabled]="!formRef.valid">

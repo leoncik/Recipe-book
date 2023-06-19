@@ -19,6 +19,25 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
     constructor(private shoppingListService: ShoppingListService) {}
 
+    unitOptions = [
+        {
+            label: 'Volume',
+            options: ['mL', 'L', 'dL', 'tsp'],
+        },
+        {
+            label: 'Weight',
+            options: ['g', 'kg', 'mg'],
+        },
+        {
+            label: 'Length',
+            options: ['mm', 'cm', 'm'],
+        },
+        {
+            label: 'Quantity',
+            options: ['pcs'],
+        },
+    ];
+
     ngOnInit(): void {
         this.subscription =
             this.shoppingListService.startedEditingIngredient.subscribe(
@@ -30,6 +49,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
                     this.shoppingListForm.setValue({
                         name: this.editedIngredient.name,
                         amount: this.editedIngredient.amount,
+                        unit: this.editedIngredient.unit,
                     });
                 }
             );
@@ -37,7 +57,11 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
     onSubmit(form: NgForm) {
         const formValue = form.value;
-        const newIngredient = new Ingredient(formValue.name, formValue.amount);
+        const newIngredient = new Ingredient(
+            formValue.name,
+            formValue.amount,
+            formValue.unit
+        );
         if (this.editMode) {
             this.shoppingListService.updateIngredient(
                 this.editedIngredientIndex,
