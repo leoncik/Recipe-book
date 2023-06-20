@@ -10,8 +10,7 @@
 
 .ingredients {
     display: flex;
-    align-items: baseline;
-
+    align-items: flex-end;
     gap: 24px;
     margin-top: 8px;
 }
@@ -21,6 +20,10 @@
     display: flex;
     justify-content: flex-end;
     gap: 16px;
+}
+
+.delete-button {
+    align-self: center;
 }
 
 input.ng-invalid.ng-touched,

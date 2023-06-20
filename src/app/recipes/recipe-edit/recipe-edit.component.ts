@@ -13,6 +13,25 @@ export class RecipeEditComponent implements OnInit {
     editMode = false;
     recipeForm!: FormGroup;
 
+    unitOptions = [
+        {
+            label: 'Volume',
+            options: ['mL', 'L', 'dL', 'tsp'],
+        },
+        {
+            label: 'Weight',
+            options: ['g', 'kg', 'mg'],
+        },
+        {
+            label: 'Length',
+            options: ['mm', 'cm', 'm'],
+        },
+        {
+            label: 'Quantity',
+            options: ['pcs'],
+        },
+    ];
+
     constructor(
         private route: ActivatedRoute,
         private recipeService: RecipeService,
@@ -52,6 +71,10 @@ export class RecipeEditComponent implements OnInit {
                                 Validators.required,
                                 Validators.pattern(/^[1-9]+[0_9]*$/),
                             ]),
+                            unit: new FormControl(
+                                ingredient.unit,
+                                Validators.required
+                            ),
                         })
                     );
                 }
@@ -80,6 +103,7 @@ export class RecipeEditComponent implements OnInit {
                     Validators.required,
                     Validators.pattern(/^[1-9]+[0_9]*$/),
                 ]),
+                unit: new FormControl(null, Validators.required),
             })
         );
     }

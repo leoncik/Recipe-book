@@ -47,6 +47,22 @@
                         id=""
                     />
                 </mat-form-field>
+                <mat-form-field class="form-item">
+                    <label for="unit">Unit</label>
+                    <mat-select name="unit" id="unit" formControlName="unit">
+                        <mat-optgroup
+                            *ngFor="let optionType of unitOptions"
+                            [label]="optionType.label"
+                        >
+                            <mat-option
+                                *ngFor="let option of optionType.options"
+                                [value]="option"
+                            >
+                                {{ option }}
+                            </mat-option>
+                        </mat-optgroup>
+                    </mat-select>
+                </mat-form-field>
                 <div class="delete-button">
                     <button
                         mat-flat-button
