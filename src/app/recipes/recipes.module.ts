@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipesRoutingModule } from './recipes-routing.module';
-import { DropdownDirective } from '../shared/dropdown.directive';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -20,7 +20,6 @@ import { DropdownDirective } from '../shared/dropdown.directive';
         RecipeItemComponent,
         RecipeStartComponent,
         RecipeEditComponent,
-        DropdownDirective,
     ],
     imports: [
         CommonModule,
@@ -28,6 +27,7 @@ import { DropdownDirective } from '../shared/dropdown.directive';
         RecipesRoutingModule,
         MatCardModule,
         MatButtonModule,
+        SharedModule,
     ],
 })
 export class RecipesModule {}
