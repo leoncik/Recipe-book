@@ -1,17 +1,13 @@
+.title {
+    font-size: 1.3rem;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: mintcream;
-    padding: 8px 16px;
-}
-
-a {
-    color: var(--primary-color);
-    cursor: pointer;
-}
-.active {
-    text-decoration: underline;
+    background-color: #ffffff;
+    padding: 0 16px;
 }
 
 .navigation,

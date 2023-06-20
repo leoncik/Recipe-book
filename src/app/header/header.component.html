@@ -1,17 +1,22 @@
-<nav>
+<nav class="mat-elevation-z2">
     <div class="nav-header">
-        <a href="#">Recipe Book</a>
+        <a class="title" href="#">📖 Recipe Book</a>
     </div>
     <div class="nav-links">
-        <ul class="navigation">
+        <mat-nav-list class="navigation">
             <li>
-                <a routerLinkActive="active" routerLink="/recipes">Recipes</a>
+                <a mat-list-item routerLinkActive="active" routerLink="/recipes"
+                    >Recipes</a
+                >
             </li>
             <li>
-                <a routerLinkActive="active" routerLink="/shopping-list"
+                <a
+                    mat-list-item
+                    routerLinkActive="active"
+                    routerLink="/shopping-list"
                     >Shopping list</a
                 >
             </li>
-        </ul>
+        </mat-nav-list>
     </div>
 </nav>

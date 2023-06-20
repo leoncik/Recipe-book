@@ -30,3 +30,12 @@ a {
     --other2: #ffba08;
     --other3: #d00000;
 }
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

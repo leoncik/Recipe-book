@@ -1,5 +1,15 @@
-<a style="cursor: pointer" [routerLink]="[index]" routerLinkActive="active">
-    <h2>{{ recipe.name }}</h2>
-    <p>{{ recipe.description }}</p>
-    <img src="{{ recipe.imagePath }}" alt="{{ recipe.name }}" />
-</a>
+<mat-card>
+    <a style="cursor: pointer" [routerLink]="[index]" routerLinkActive="active">
+        <mat-card-header>
+            <mat-card-title>{{ recipe.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ recipe.description }}</p>
+        </mat-card-content>
+        <img
+            mat-card-image
+            src="{{ recipe.imagePath }}"
+            alt="{{ recipe.name }}"
+        />
+    </a>
+</mat-card>

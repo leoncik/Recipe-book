@@ -1,34 +1,51 @@
-<div class="recipe-picture">
-    <img [src]="recipe.imagePath" alt="" />
-</div>
-<div class="recipe-title">
-    <h1>{{ recipe.name }}</h1>
-</div>
-<div class="recipe-manager">
-    <button appDropdown>Manage recipe</button>
-    <ul class="recipe-options">
-        <li>
-            <a (click)="onAddToShoppingList()"
-                >Add ingredients to the Shopping list</a
-            >
-        </li>
-        <li>
-            <a [routerLink]="['edit']">Edit recipe</a>
-        </li>
-        <li>
-            <a (click)="onDeleteRecipe()">Delete recipe</a>
-        </li>
-    </ul>
-</div>
-<div>
-    <p>{{ recipe.description }}</p>
-</div>
-<div class="ingredients">
-    <h2>Ingredients</h2>
-    <hr />
-    <ul>
-        <li *ngFor="let ingredient of recipe.ingredients">
-            {{ ingredient.name }} - {{ ingredient.amount }}
-        </li>
-    </ul>
-</div>
+<mat-card class="recipe-card">
+    <div class="recipe-picture">
+        <img mat-card-image [src]="recipe.imagePath" alt="" />
+    </div>
+    <div class="recipe-title">
+        <mat-card-title>{{ recipe.name }}</mat-card-title>
+    </div>
+    <div class="recipe-manager">
+        <button
+            class="manage-button"
+            mat-stroked-button
+            appDropdown
+            type="button"
+        >
+            Manage recipe
+        </button>
+
+        <mat-card-actions class="recipe-options">
+            <li>
+                <button mat-button>
+                    <a (click)="onAddToShoppingList()"
+                        >Add ingredients to the Shopping list</a
+                    >
+                </button>
+            </li>
+            <li>
+                <button mat-button>
+                    <a [routerLink]="['edit']">Edit recipe</a>
+                </button>
+            </li>
+            <li>
+                <button mat-button>
+                    <a (click)="onDeleteRecipe()">Delete recipe</a>
+                </button>
+            </li>
+        </mat-card-actions>
+    </div>
+    <div>
+        <p>{{ recipe.description }}</p>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <hr />
+        <ul>
+            <li *ngFor="let ingredient of recipe.ingredients">
+                {{ ingredient.name }} - {{ ingredient.amount }}
+                {{ ingredient.unit }}
+            </li>
+        </ul>
+    </div>
+</mat-card>

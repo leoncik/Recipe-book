@@ -1,10 +1,17 @@
 <form (ngSubmit)="onSubmit(formRef)" #formRef="ngForm">
     <div class="form-fields">
-        <div class="form-item">
+        <mat-form-field class="form-item">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" required ngModel />
-        </div>
-        <div class="form-item">
+            <input
+                matInput
+                type="text"
+                name="name"
+                id="name"
+                required
+                ngModel
+            />
+        </mat-form-field>
+        <mat-form-field class="form-item">
             <label for="amount">Amount</label>
             <input
                 type="number"
@@ -12,34 +19,48 @@
                 min="1"
                 name="amount"
                 id="amount"
+                matInput
                 required
                 ngModel
             />
-        </div>
-        <div class="form-item">
+        </mat-form-field>
+        <mat-form-field class="form-item">
             <label for="unit">Unit</label>
-            <select name="unit" id="unit" required ngModel>
-                <optgroup
+            <mat-select name="unit" id="unit" required ngModel>
+                <mat-optgroup
                     *ngFor="let optionType of unitOptions"
                     [label]="optionType.label"
                 >
-                    <option
+                    <mat-option
                         *ngFor="let option of optionType.options"
                         [value]="option"
                     >
                         {{ option }}
-                    </option>
-                </optgroup>
-            </select>
-        </div>
+                    </mat-option>
+                </mat-optgroup>
+            </mat-select>
+        </mat-form-field>
     </div>
     <div class="form-buttons">
-        <button type="submit" [disabled]="!formRef.valid">
+        <button
+            mat-stroked-button
+            type="submit"
+            color="primary"
+            [disabled]="!formRef.valid"
+        >
             {{ editMode ? 'Edit ingredient' : 'Add ingredient' }}
         </button>
-        <button *ngIf="editMode" (click)="onDelete()" type="button">
+        <button
+            mat-stroked-button
+            color="warn"
+            *ngIf="editMode"
+            (click)="onDelete()"
+            type="button"
+        >
             Delete ingredient
         </button>
-        <button (click)="onClear()" type="button">Clear</button>
+        <button mat-stroked-button (click)="onClear()" type="button">
+            Clear
+        </button>
     </div>
 </form>
