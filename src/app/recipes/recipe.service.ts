@@ -33,6 +33,18 @@ export class RecipeService {
                 new Ingredient('Oil', 1, 'tsp'),
             ]
         ),
+        new Recipe(
+            'Gloubi-bulga',
+            'A personal favourite.',
+            'https://upload.wikimedia.org/wikipedia/commons/1/1d/Casimir_20061112_Paris_Jouets_Collections.jpg',
+            [
+                new Ingredient('Strawberry jam', 4, 'tsp'),
+                new Ingredient('Powdered chocolate', 25, 'g'),
+                new Ingredient('Mashed banana', 1, 'pcs'),
+                new Ingredient('Very strong mustard', 5, 'tsp'),
+                new Ingredient('Raw sausage', 1, 'pcs'),
+            ]
+        ),
     ];
     // private recipes: Recipe[] = [];
 
