@@ -5,7 +5,8 @@ import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.compo
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipeStartComponent } from './recipe-start/recipe-start.component';
 import { RecipesComponent } from './recipes.component';
-import { RouterModule } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipesRoutingModule } from './recipes-routing.module';
@@ -19,6 +20,12 @@ import { RecipesRoutingModule } from './recipes-routing.module';
         RecipeStartComponent,
         RecipeEditComponent,
     ],
-    imports: [CommonModule, ReactiveFormsModule, RecipesRoutingModule],
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        RecipesRoutingModule,
+        MatCardModule,
+        MatButtonModule,
+    ],
 })
 export class RecipesModule {}
