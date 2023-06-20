@@ -1,9 +1,13 @@
 .recipe-card {
     padding: 16px;
+    width: 300px;
 }
 
 img {
     max-height: 250px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 
 .manage-button {
