@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
     declarations: [ShoppingListComponent, ShoppingEditComponent],
@@ -17,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
         MatInputModule,
         MatSelectModule,
         MatButtonModule,
+        MatListModule,
     ],
 })
 export class ShoppingListModule {}
