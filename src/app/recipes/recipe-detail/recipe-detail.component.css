@@ -1,9 +1,13 @@
+.recipe-card {
+    padding: 16px;
+}
+
 img {
     max-height: 250px;
 }
 
-a {
-    cursor: pointer;
+.manage-button {
+    margin: 16px 0;
 }
 
 .recipe-manager {
@@ -14,15 +18,11 @@ a {
     display: none;
     padding: 4px 8px;
     position: absolute;
-    top: 25px;
+    top: 58px;
     left: 0;
     white-space: nowrap;
     background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.recipe-options a:hover {
-    text-decoration: underline;
 }
 
 .dropdown-open ~ .recipe-options {
