@@ -32,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         BrowserAnimationsModule,
         MatListModule,
     ],
+    exports: [DropdownDirective],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
