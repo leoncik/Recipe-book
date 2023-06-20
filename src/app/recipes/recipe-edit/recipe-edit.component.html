@@ -1,57 +1,88 @@
-<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input formControlName="name" type="text" id="name" />
-    </div>
-    <div class="form-group">
-        <label for="imagePath">Image URL</label>
-        <input
-            formControlName="imagePath"
-            #imagePathRef
-            type="text"
-            id="imagePath"
-        />
-    </div>
+<mat-card class="recipe-card">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="form-group">
+            <mat-label for="name">Name</mat-label>
+            <input matInput formControlName="name" type="text" id="name" />
+        </mat-form-field>
+        <mat-form-field class="form-group">
+            <mat-label for="imagePath">Image URL</mat-label>
+            <input
+                matInput
+                formControlName="imagePath"
+                #imagePathRef
+                type="text"
+                id="imagePath"
+            />
+        </mat-form-field>
 
-    <div class="image-preview">
-        <img [src]="imagePathRef.value" alt="" />
-    </div>
+        <div class="image-preview">
+            <img [src]="imagePathRef.value" alt="" />
+        </div>
 
-    <div class="form-group">
-        <label for="description">Description</label>
-        <textarea
-            formControlName="description"
-            id="description"
-            rows="6"
-        ></textarea>
-    </div>
+        <mat-form-field class="form-group">
+            <mat-label for="description">Description</mat-label>
+            <textarea
+                matInput
+                formControlName="description"
+                id="description"
+                rows="6"
+            ></textarea>
+        </mat-form-field>
 
-    <div class="ingredients-wrapper" formArrayName="ingredients">
-        <div
-            *ngFor="let ingredientCtrl of controls; let i = index"
-            [formGroupName]="i"
-            class="ingredients"
-        >
-            <div class="ingredient-name">
-                <input type="text" formControlName="name" id="" />
+        <div class="ingredients-wrapper" formArrayName="ingredients">
+            <div
+                *ngFor="let ingredientCtrl of controls; let i = index"
+                [formGroupName]="i"
+                class="ingredients"
+            >
+                <mat-form-field class="ingredient-name">
+                    <input matInput type="text" formControlName="name" id="" />
+                </mat-form-field>
+                <mat-form-field class="ingredient-amount">
+                    <input
+                        matInput
+                        min="1"
+                        type="number"
+                        formControlName="amount"
+                        id=""
+                    />
+                </mat-form-field>
+                <div class="delete-button">
+                    <button
+                        mat-flat-button
+                        color="warn"
+                        (click)="onDeleteIngredient(i)"
+                        type="button"
+                    >
+                        X
+                    </button>
+                </div>
             </div>
-            <div class="ingredient-amount">
-                <input min="1" type="number" formControlName="amount" id="" />
-            </div>
-            <div class="delete-button">
-                <button (click)="onDeleteIngredient(i)" type="button">X</button>
+            <hr />
+            <div>
+                <button
+                    mat-stroked-button
+                    color="accent"
+                    (click)="onAddIngredient()"
+                    type="button"
+                >
+                    Add ingredient
+                </button>
             </div>
         </div>
-        <hr />
-        <div>
-            <button (click)="onAddIngredient()" type="button">
-                Add ingredient
+
+        <div class="form-buttons">
+            <button
+                mat-raised-button
+                color="primary"
+                [disabled]="!recipeForm.valid"
+                type="submit"
+            >
+                Save
+            </button>
+            <button mat-raised-button (click)="onCancel()" type="button">
+                Cancel
             </button>
         </div>
-    </div>
-
-    <div class="form-buttons">
-        <button [disabled]="!recipeForm.valid" type="submit">Save</button>
-        <button (click)="onCancel()" type="button">Cancel</button>
-    </div>
-</form>
+    </form>
+</mat-card>

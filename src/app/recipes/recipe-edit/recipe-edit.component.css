@@ -1,3 +1,7 @@
+.recipe-card {
+    padding: 16px;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -6,6 +10,8 @@
 
 .ingredients {
     display: flex;
+    align-items: baseline;
+
     gap: 24px;
     margin-top: 8px;
 }

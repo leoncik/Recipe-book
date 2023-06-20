@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
     declarations: [
@@ -28,6 +29,7 @@ import { SharedModule } from '../shared/shared.module';
         MatCardModule,
         MatButtonModule,
         SharedModule,
+        MatInputModule,
     ],
 })
 export class RecipesModule {}
