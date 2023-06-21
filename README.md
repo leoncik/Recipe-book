@@ -1,27 +1,31 @@
 # RecipeBook
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+A study project to cover the features of the Angular framework.
 
-## Development server
+## Repo's structure
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This project has two branches :
 
-## Code scaffolding
+-   _master_ : this branch contains the complete logic of the application (including authentication, guards, resolvers...).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-   _demo_ : for more convenience I made a "lightweight" version of the app without the authentication and API calls to host a preview on Netlify (leoncik-recipe-book.netlify.app/)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Get this repository's content by [direct download](https://github.com/leoncik/Recipe-book/archive/refs/heads/master.zip) or by cloning It :
 
-## Running unit tests
+```sh
+git clone https://github.com/leoncik/Recipe-book.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Make sure that [Node.js](https://nodejs.org/en/) is installed on your machine and that you have a package manager (like [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)). Then install the dependencies :
 
-## Running end-to-end tests
+```sh
+pnpm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. You are ready to do !
 
-## Further help
+## How to use
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `pnpm start` to launch a dev server and work on the project.
