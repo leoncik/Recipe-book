@@ -17,20 +17,18 @@
 
         <mat-card-actions class="recipe-options">
             <li>
-                <button mat-button>
-                    <a (click)="onAddToShoppingList()"
-                        >Add ingredients to the Shopping list</a
-                    >
+                <button mat-button (click)="onAddToShoppingList()">
+                    <a>Add ingredients to the Shopping list</a>
                 </button>
             </li>
             <li>
-                <button mat-button>
-                    <a [routerLink]="['edit']">Edit recipe</a>
+                <button [routerLink]="['edit']" mat-button>
+                    <a>Edit recipe</a>
                 </button>
             </li>
             <li>
-                <button mat-button>
-                    <a (click)="onDeleteRecipe()">Delete recipe</a>
+                <button mat-button (click)="onDeleteRecipe()">
+                    <a>Delete recipe</a>
                 </button>
             </li>
         </mat-card-actions>
